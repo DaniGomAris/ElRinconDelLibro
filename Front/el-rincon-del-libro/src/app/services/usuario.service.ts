@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = '-------------------Poner aca el puerto------------------';
+  private apiUrl = 'http://localhost:3001';
 
   constructor(private http: HttpClient) { }
 
@@ -17,15 +17,15 @@ export class UsuarioService {
   }
 
   // Registrar un nuevo usuario
-  register(nombre: string, email: string, password: string): Observable<any> {
-    const userData = { nombre, email, password };
+  register(nombre: string, apellido: string, email: string, password: string): Observable<any> {
+    const userData = { nombre, apellido, email, password };
     return this.http.post(`${this.apiUrl}/user/create`, userData);
   }
 
   // Actualizar el usuario
-  updateUser(nombre: string, email: string, fecha_nacimiento: string, token: string): Observable<any> {
+  updateUser(nombre: string, apellido: string, email: string, password: string, token: string): Observable<any> {
     const headers = { 'Authorization': `Bearer ${token}` };
-    return this.http.post(`${this.apiUrl}/update`, { nombre, email, fecha_nacimiento }, { headers });
+    return this.http.post(`${this.apiUrl}/user/update`, { nombre, apellido, email, password }, { headers });
   }
 
   // Guardar la sesión del usuario en el LocalStorage
@@ -40,6 +40,7 @@ export class UsuarioService {
       user.isLoggedIn = false;
       localStorage.setItem('user', JSON.stringify(user));
     }
+    localStorage.removeItem('user'); // Se recomienda eliminar el usuario al cerrar sesión
   }
   
   // Verificar si el usuario está logueado

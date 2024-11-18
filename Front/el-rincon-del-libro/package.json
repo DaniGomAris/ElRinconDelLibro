@@ -1,5 +1,5 @@
 {
-  "name": "el-rincon-del-libro",
+  "name": "book-store",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:el-rincon-del-libro": "node dist/el-rincon-del-libro/server/server.mjs"
+    "serve:ssr:BookStore": "node dist/book-store/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/platform-server": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.11",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

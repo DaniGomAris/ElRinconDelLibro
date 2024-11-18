@@ -29,6 +29,7 @@ export class SignUpComponent {
   ) {
     this.registerForm = this.fb.group({
       nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
@@ -36,9 +37,9 @@ export class SignUpComponent {
 
   onRegister() {
     if (this.registerForm.valid) {
-      const { nombre, email, password } = this.registerForm.value;
+      const { nombre, apellido, email, password } = this.registerForm.value;
 
-      this.usuarioService.register(nombre, email, password).subscribe({
+      this.usuarioService.register(nombre, apellido, email, password).subscribe({
         next: (response) => {
           this.router.navigate(['/sign-in']);
         },

@@ -15,6 +15,14 @@
                 </div>
 
                 <div class="input-group">
+                    <label for="apellido">Apellido:</label>
+                    <input id="apellido" formControlName="apellido" type="text" />
+                    <div *ngIf="registerForm.get('apellido')?.invalid && registerForm.get('apellido')?.touched">
+                        Apellido es requerido.
+                    </div>
+                </div>
+
+                <div class="input-group">
                     <label for="email">Email:</label>
                     <input id="email" formControlName="email" type="email" />
                     <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
