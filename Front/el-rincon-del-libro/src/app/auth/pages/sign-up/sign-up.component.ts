@@ -4,7 +4,7 @@ import { HeaderComponent } from "../../../layout/pages/header/header.component";
 import { Router, RouterModule } from '@angular/router';
 import { UsuarioService } from '../../../services/usuario.service';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';  // Importa CommonModule
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';  // Importa CommonModule
     HeaderComponent,
     RouterModule,
     ReactiveFormsModule,
-    CommonModule,  // Asegúrate de importar CommonModule
+    CommonModule,
   ],
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']

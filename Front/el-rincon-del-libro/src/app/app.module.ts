@@ -18,7 +18,9 @@ import { CartService } from './services/cart.service';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    SignInComponent
+    SignInComponent,
+    FormsModule,
+    RouterModule
   ],
   imports: [
     BrowserModule,
